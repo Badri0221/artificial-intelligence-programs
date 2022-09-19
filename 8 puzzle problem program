@@ -2,7 +2,7 @@
 # node to the final destination node for N*N-1 puzzle  
 # algorithm by the help of Branch and Bound technique  
 # The answer assumes that the instance of the  
- 
+# puzzle can be solved  
   
 # Importing the 'copy' for deepcopy method  
 import copy  
