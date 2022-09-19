@@ -1,5 +1,5 @@
 # This function is used to initialize the 
-# dictionary elements with a default values.
+# dictionary elements with a default value.
 from collections import defaultdict
   
 # jug1 and jug2 contain the value 
