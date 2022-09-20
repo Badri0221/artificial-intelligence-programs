@@ -1,23 +1,22 @@
-# DFS algorithm in Python
+# Using a Python dictionary to act as an adjacency list
+graph = {
+  '5' : ['3','7'],
+  '3' : ['2', '4'],
+  '7' : ['8'],
+  '2' : [],
+  '4' : ['8'],
+  '8' : []
+}
 
+visited = set() # Set to keep track of visited nodes of graph.
 
-# DFS algorithm
-def dfs(graph, start, visited=None):
-    if visited is None:
-        visited = set()
-    visited.add(start)
+def dfs(visited, graph, node):  #function for dfs 
+    if node not in visited:
+        print (node)
+        visited.add(node)
+        for neighbour in graph[node]:
+            dfs(visited, graph, neighbour)
 
-    print(start)
-
-    for next in graph[start] - visited:
-        dfs(graph, next, visited)
-    return visited
-
-
-graph = {'0': set(['1', '2']),
-         '1': set(['0', '3', '4']),
-         '2': set(['0']),
-         '3': set(['1']),
-         '4': set(['2', '3'])}
-
-dfs(graph, '0')
+# Driver Code
+print("Following is the Depth-First Search")
+dfs(visited, graph, '5')
